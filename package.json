@@ -11,5 +11,9 @@
     "app"
   ],
   "author": "Dathan Spencer <dpspencer88@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
 }
