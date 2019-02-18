@@ -22,4 +22,4 @@ io.on('connection', function(client) {
 	});
 });
 
-server.listen(7777);
+server.listen(process.env.PORT || 7777);
