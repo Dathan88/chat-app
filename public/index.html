@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
@@ -10,37 +10,55 @@
         crossorigin="anonymous">
     <title>Chat App</title>
     <style>
-        #messages{height:300px;}
+        body {
+            margin-top: 2rem;
+        }
+
+        #messageArea {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3 col-sm-12">
-                <h1 class="text-center">
-                    Chat
-                    <button id="clear" class="btn btn-danger">Clear</button>
-                </h1>
-                <div id="status"></div>
-                <div id="chat">
-                    <input type="text" id="username" class="form-control" placeholder="Enter name...">
-                    <br>
-                    <div class="card">
-                        <div id="messages" class="card-block">
-
-                        </div>
+        <div id="userFormArea" class="table-light">
+            <div class="col-md-12">
+                <form id="userForm">
+                    <div class="form-group">
+                        <label>Enter UserName</label>
+                        <input class="form-control" id="username"></input>
+                        <br>
+                        <input type="submit" class="btn btn-primary" value="Login">
                     </div>
-                    <br>
-                    <textarea id="textarea" class="form-control" placeholder="Enter message..."></textarea>
-                </div>
+                </form>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="client.js"></script>
+        <div id="messageArea" class="table-light">
+            <div class="col-md-4">
+                <div class="card card-body bg-light">
+                    <h3>Online Users</h3>
+                    <ul class="list-group" id="users"></ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="chat" id="chat"></div>
+
+                <form id="messageForm">
+                    <div class="form-group">
+                        <label>Enter Message</label>
+                        <textarea class="form-control" id="message"></textarea>
+                        <br>
+                        <input type="submit" class="btn btn-primary" value="Send Message">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="client.js"></script>
 </body>
 
 </html>
