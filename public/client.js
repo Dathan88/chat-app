@@ -1,5 +1,5 @@
 // initializing socket, connection to server
-const socket = io.connect('http://localhost:7777');
+const socket = io.connect();
 const $messageForm = $('#messageForm');
 const $message = $('#message');
 const $chat = $('#chat');
